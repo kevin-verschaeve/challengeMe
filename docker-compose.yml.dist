@@ -1,0 +1,26 @@
+mongo:
+    image: mongo
+    container_name: mongo
+    volumes_from: [data]
+
+php-apache:
+    build: docker/php-apache
+    container_name: challenge-me
+    volumes_from: [data]
+    links:
+        - mongo
+
+tools:
+    build: docker/tools
+    volumes_from: [data]
+    env_file:
+        - docker/env
+        - docker/env_access
+    links:
+        - mongo
+
+data:
+    image: busybox
+    volumes:
+        - .:/var/www/html
+        - ~/.composer:/var/www/.composer
