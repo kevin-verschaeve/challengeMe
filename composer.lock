@@ -4,9 +4,125 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "445a34091e00eafb7583e9c216fab562",
-    "content-hash": "c189a9530121d09de909a838358515ac",
+    "hash": "fa6087829fc1eff0234640e6252fd617",
+    "content-hash": "ee81f00b2eabc2581d0939fc8e661e79",
     "packages": [
+        {
+            "name": "antimattr/mongodb-migrations",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antimattr/mongodb-migrations.git",
+                "reference": "855636b0e170df3a808b03161b6e0903de217698"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations/zipball/855636b0e170df3a808b03161b6e0903de217698",
+                "reference": "855636b0e170df3a808b03161b6e0903de217698",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/mongodb": "1.*",
+                "php": ">=5.3.2",
+                "symfony/console": "2.*",
+                "symfony/yaml": "2.*"
+            },
+            "require-dev": {
+                "antimattr/test-case": "~1.0@stable",
+                "fabpot/php-cs-fixer": "0.5.*@dev",
+                "mikey179/vfsstream": "1.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "AntiMattr\\MongoDB\\Migrations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fitzgerald",
+                    "email": "matthewfitz@gmail.com"
+                },
+                {
+                    "name": "Ryan Catlin",
+                    "email": "ryan.catlin@gmail.com"
+                }
+            ],
+            "description": "Managed Database Migrations for MongoDB",
+            "homepage": "http://github.com/antimattr/mongodb-migrations",
+            "keywords": [
+                "antimattr",
+                "database",
+                "doctrine",
+                "migration",
+                "mongodb"
+            ],
+            "time": "2014-09-26 17:18:36"
+        },
+        {
+            "name": "antimattr/mongodb-migrations-bundle",
+            "version": "v1.0.1",
+            "target-dir": "AntiMattr/Bundle/MongoDBMigrationsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/antimattr/mongodb-migrations-bundle.git",
+                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/antimattr/mongodb-migrations-bundle/zipball/f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
+                "reference": "f0c53b014ea7ee3e0d315f9a737d634420cab8c8",
+                "shasum": ""
+            },
+            "require": {
+                "antimattr/mongodb-migrations": "~1.0@stable",
+                "doctrine/mongodb-odm": "1.*",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "AntiMattr\\Bundle\\MongoDBMigrationsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Fitzgerald",
+                    "email": "matthewfitz@gmail.com"
+                }
+            ],
+            "description": "Symfony MongoDBMigrationsBundle",
+            "homepage": "http://github.com/antimattr/mongodb-migrations-bundle",
+            "keywords": [
+                "antimattr",
+                "database",
+                "doctrine",
+                "migration",
+                "mongodb",
+                "symfony"
+            ],
+            "time": "2014-10-20 19:03:35"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
@@ -769,16 +885,16 @@
         },
         {
             "name": "doctrine/mongodb-odm",
-            "version": "dev-master",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/mongodb-odm.git",
-                "reference": "516574ba1af22065907dc357266fe9721f317c61"
+                "reference": "318c9651bdf18a3bcb6f88b0bddd385e1a82284e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/516574ba1af22065907dc357266fe9721f317c61",
-                "reference": "516574ba1af22065907dc357266fe9721f317c61",
+                "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/318c9651bdf18a3bcb6f88b0bddd385e1a82284e",
+                "reference": "318c9651bdf18a3bcb6f88b0bddd385e1a82284e",
                 "shasum": ""
             },
             "require": {
@@ -789,8 +905,7 @@
                 "doctrine/inflector": "~1.0",
                 "doctrine/instantiator": "~1.0.1",
                 "doctrine/mongodb": "~1.2",
-                "ext-mongo": "^1.5",
-                "php": "^5.5 || ^7.0",
+                "php": ">=5.3.2",
                 "symfony/console": "~2.3|~3.0"
             },
             "require-dev": {
@@ -849,20 +964,20 @@
                 "odm",
                 "persistence"
             ],
-            "time": "2016-03-04 08:12:02"
+            "time": "2016-02-16 10:02:45"
         },
         {
             "name": "doctrine/mongodb-odm-bundle",
-            "version": "3.0.x-dev",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineMongoDBBundle.git",
-                "reference": "beeed22cd07f9e5fe5ac2524a8be37d4656dd514"
+                "reference": "ce759711b418617191f599f2b7e02048191146b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/beeed22cd07f9e5fe5ac2524a8be37d4656dd514",
-                "reference": "beeed22cd07f9e5fe5ac2524a8be37d4656dd514",
+                "url": "https://api.github.com/repos/doctrine/DoctrineMongoDBBundle/zipball/ce759711b418617191f599f2b7e02048191146b7",
+                "reference": "ce759711b418617191f599f2b7e02048191146b7",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +1034,7 @@
                 "persistence",
                 "symfony"
             ],
-            "time": "2016-02-08 21:00:31"
+            "time": "2015-12-26 16:04:48"
         },
         {
             "name": "doctrine/orm",
@@ -4658,8 +4773,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "doctrine/mongodb-odm": 20,
-        "doctrine/mongodb-odm-bundle": 20,
         "friendsofsymfony/oauth-server-bundle": 20,
         "friendsofsymfony/rest-bundle": 20,
         "friendsofsymfony/user-bundle": 20,
