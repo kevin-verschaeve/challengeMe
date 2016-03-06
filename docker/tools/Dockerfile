@@ -10,6 +10,7 @@ RUN apt-get update \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng12-dev \
+        git \
     && curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin \
     && docker-php-ext-install intl mbstring zip gd \
     && pecl install mongo mongodb \
