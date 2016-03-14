@@ -18,3 +18,9 @@ Cette opération peut prendre un certain la première fois, puis lancera le proj
    > - en utilisant docker-hostmanager. `make host-manager`, puis aller sur [http://challenge-me.docker] (http://challenge-me.docker)
 
 La deuxième solution est recommandée, du fait que l'adresse IP du conteneur peut changer souvent
+
+
+##### Fixtures
+Placer les fixtures dans le dossier AppBundle\\DataFixtures\\ODM\\*className*.yml
+
+Lancer `make fixtures` pour les charger

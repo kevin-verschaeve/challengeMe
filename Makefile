@@ -11,6 +11,9 @@ start:
 	$(FIG) build --no-cache
 	$(FIG) up -d
 
+fixtures:
+	$(RUN) php app/console hautelook_alice:doctrine:mongodb:fixtures:load
+
 reboot:
 	$(FIG) kill
 	$(FIG) rm -fv
