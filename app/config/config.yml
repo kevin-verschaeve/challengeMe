@@ -53,3 +53,12 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+hautelook_alice:
+    db_drivers:
+        orm: false
+        mongodb: true
+    locale: fr_FR
+    seed: 1
+    persist_once: false
+    loading_limit: 5
