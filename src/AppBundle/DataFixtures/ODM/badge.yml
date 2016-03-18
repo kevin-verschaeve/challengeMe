@@ -1,0 +1,5 @@
+AppBundle\Document\Badge:
+    badge-{1..10}:
+        name: 'Badge <current()>'
+        description: 'Description du badge <current()>'
+        bonusPoints: <numberBetween(100, 1000)>

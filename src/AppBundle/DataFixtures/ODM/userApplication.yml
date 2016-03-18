@@ -1,0 +1,38 @@
+AppBundle\Document\UserApplication:
+    ua-johnny-runtastic:
+        user: '@user-johnny'
+        application: '@application-runtastic'
+        applicationUsername: 'jojo-runtastic'
+        password: 'secret'
+        enabled: true
+    ua-kevin-runtastic:
+        user: '@user-kevin'
+        application: '@application-runtastic'
+        applicationUsername: 'keke-runtastic'
+        password: 'secret'
+        enabled: true
+    ua-nicolas-runkeeper:
+        user: '@user-nicolas'
+        application: '@application-runkeeper'
+        applicationUsername: 'nico-runkeeper'
+        password: 'secret'
+        enabled: true
+    ua-guillaume-nike:
+        user: '@user-guillaume'
+        application: '@application-nike'
+        applicationUsername: 'guigui-nike'
+        password: 'secret'
+        enabled: true
+    ua-johnny-nike:
+        user: '@user-johnny'
+        application: '@application-nike'
+        applicationUsername: 'jojo-nike'
+        password: 'secret'
+        enabled: true
+    ua-johnny-endomondo:
+        user: '@user-johnny'
+        application: '@application-endomondo'
+        applicationUsername: 'jojo-endomondo'
+        password: 'secret'
+        enabled: true
+

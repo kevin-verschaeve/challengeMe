@@ -12,7 +12,7 @@ start:
 	$(FIG) up -d
 
 fixtures:
-	$(RUN) php app/console hautelook_alice:doctrine:mongodb:fixtures:load
+	$(RUN) php app/console hautelook_alice:doctrine:mongodb:fixtures:load --no-interaction
 
 reboot:
 	$(FIG) kill

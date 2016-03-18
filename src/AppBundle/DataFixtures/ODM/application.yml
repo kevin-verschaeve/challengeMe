@@ -1,0 +1,13 @@
+AppBundle\Document\Application:
+    application-runtastic:
+        name: 'Runtastic'
+        description: 'Description de Runtastic'
+    application-runkeeper:
+        name: 'Runkeeper'
+        description: 'Description de Runkeeper'
+    application-nike:
+        name: 'Nike'
+        description: 'Description de Nike'
+    application-endomondo:
+        name: 'Endomondo'
+        description: 'Description de Endomondo'

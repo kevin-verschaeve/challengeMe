@@ -1,0 +1,12 @@
+AppBundle\Document\Challenge:
+    challenge-{1..20}:
+        challenger: '@user-*'
+        challenged: '@user-*'
+        status: '@status-*'
+        comment: <text(50)>
+        realizedAt: <dateTimeThisYear()>
+        challengeNumber: 1
+        requiredDistance: <numberBetween(5, 12)>
+        requiredDuration: <numberBetween(30, 70)>
+        points: <numberBetween(50, 100)>
+        activity: '@activity-<current()>'

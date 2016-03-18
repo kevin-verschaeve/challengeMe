@@ -1,0 +1,96 @@
+AppBundle\Document\User:
+    user-johnny:
+        username: 'Johnny'
+        usernameCanonical: 'Johnny'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'johnny@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: ['@user-kevin']
+        friends: ['@user-kevin', '@user-nicolas']
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-1']
+        groups: []
+
+    user-kevin:
+        username: 'Kevin'
+        usernameCanonical: 'Kevin'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'kevin@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: ['@user-johnny']
+        friends: ['@user-johnny']
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-2']
+        groups: []
+
+    user-guillaume:
+        username: 'Guillaume'
+        usernameCanonical: 'Guillaume'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'guillaume@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: []
+        friends: []
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-3']
+        groups: []
+
+    user-nicolas:
+        username: 'Nicolas'
+        usernameCanonical: 'Nicolas'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'nicolas@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: []
+        friends: []
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-4']
+        groups: []
+
+    user-tommy:
+        username: 'Tommy'
+        usernameCanonical: 'Tommy'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'tommy@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: []
+        friends: []
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-5']
+        groups: []
+
+    user-adrien:
+        username: 'Adrien'
+        usernameCanonical: 'Adrien'
+        plainPassword: 'toto'
+        roles: ['ROLE_ADMIN']
+        email: 'adrien@challenge-me.com'
+        totalPoints: 1000
+        badges: ['@badge-1', '@badge-2']
+        applications: ['@application-runtastic']
+        friendsWithMe: []
+        friends: []
+        challenges: []
+        badges: ['@badge-1']
+        activities: ['@activity-6']
+        groups: []

@@ -1,0 +1,16 @@
+AppBundle\Document\Status:
+    status-declined:
+        name: 'Declined'
+        value: 1
+    status-fail:
+        name: 'Failed'
+        value: 2
+    status-pending:
+        name: 'Pending' # fing better translation for "En cours"
+        value: 3
+    status-won:
+        name: 'Won'
+        value: 4
+    status-waiting:
+        name: 'Waiting validation'
+        value: 5

@@ -1,0 +1,7 @@
+AppBundle\Document\Activity:
+    activity-{1..20}:
+        application: '@application-runtastic'
+        duration: <numberBetween(100, 2000)>
+        distance: <numberBetween(5, 15)>
+        kcal: <numberBetween(500, 2000)>
+        date: <dateTimeThisYear()>
