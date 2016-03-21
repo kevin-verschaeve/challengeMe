@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: applications_connectors.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -62,6 +63,34 @@ hautelook_alice:
     seed: 1
     persist_once: false
     loading_limit: 5
+
+csa_guzzle:
+    profiler: %kernel.debug%
+    logger: true
+    clients:
+        apiary: # test purpose only, remove when done
+            config:
+                base_uri: http://polls.apiblueprint.org/
+        runtastic:
+            lazy: true
+            config:
+                base_uri: https://www.runtastic.com/
+        runkeeper:
+            lazy: true
+            config:
+                base_uri: https://api.runkeeper.com/
+        endomondo:
+            lazy: true
+            config:
+                base_uri: https://api.mobile.endomondo.com/mobile/
+        nike_plus:
+            lazy: true
+            config:
+                base_uri: https://api.nike.com/v1/me/
+        strava:
+            lazy: true
+            config:
+                base_uri: https://www.strava.com/api/v3/
 
 jms_serializer:
     metadata:

@@ -3,3 +3,6 @@ services:
         class: 'AppBundle\DataFixtures\Provider\PasswordProvider'
         arguments: ['@security.password_encoder']
         tags: [{ name: hautelook_alice.faker.provider }]
+    app.application.manager:
+        class: 'AppBundle\Manager\ApplicationManager'
+        arguments: ['@service_container']

@@ -1,0 +1,24 @@
+services:
+    app.application.connector.runtastic:
+        class: 'AppBundle\ApplicationConnector\Runtastic'
+        arguments: ['@csa_guzzle.client.runtastic']
+
+    app.application.connector.runkeeper:
+        class: 'AppBundle\ApplicationConnector\Runkeeper'
+        arguments: ['@csa_guzzle.client.runkeeper']
+
+    app.application.connector.endomondo:
+        class: 'AppBundle\ApplicationConnector\Endomondo'
+        arguments: ['@csa_guzzle.client.endomondo']
+
+    app.application.connector.nike_plus:
+        class: 'AppBundle\ApplicationConnector\NikePlus'
+        arguments: ['@csa_guzzle.client.nike_plus']
+
+    app.application.connector.strava:
+        class: 'AppBundle\ApplicationConnector\Strava'
+        arguments: ['@csa_guzzle.client.strava']
+
+    app.application.connector.apiary: # test only
+        class: 'AppBundle\ApplicationConnector\Apiary'
+        arguments: ['@csa_guzzle.client.apiary']
