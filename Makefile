@@ -1,14 +1,16 @@
 FIG=docker-compose
 RUN=$(FIG) run --rm tools
 
-all: configure start
+all: configure build start
 
 configure:
 	cp app/config/parameters.yml.dist app/config/parameters.yml
 	cp docker-compose.yml.dist docker-compose.yml
 
-start:
+build:
 	$(FIG) build --no-cache
+
+start:
 	$(FIG) up -d
 
 fixtures:
