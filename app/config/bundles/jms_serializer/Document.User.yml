@@ -1,0 +1,27 @@
+AppBundle\Document\User:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+        username:
+            expose: true
+        email:
+            expose: true
+        facebook_id:
+            expose: false
+        total_points:
+            expose: true
+        remaining_points:
+            expose: true
+        activities:
+            max_depth: 1
+            expose: false
+        applications:
+            max_depth: 1
+            expose: false
+        challenges:
+             max_depth: 2
+             expose: true
+        badges:
+             max_depth: 2
+             expose: true
