@@ -3,25 +3,39 @@
 namespace AppBundle\ApplicationConnector;
 
 use GuzzleHttp\Client;
+use Symfony\Component\Routing\Router;
 
 class Runkeeper implements ApplicationConnectorInterface
 {
-    const APPLICATION_NAME = 'runkeeper';
-
-    private $client;
-
-    public function __construct(Client $client)
+    public function __construct(Client $client, Router $router, $clientId, $clientSecret)
     {
-        $this->client = $client;
     }
 
-    public function login()
+    public function authorize()
     {
-        return '/login';
     }
 
-    public function logout()
+    public function login($code)
     {
-        return '/logout';
+    }
+
+    public function getMe()
+    {
+    }
+
+    public function getActivities()
+    {
+    }
+
+    public function getActivity($idActitvity)
+    {
+    }
+
+    public function getStats()
+    {
+    }
+
+    public function revokeAuthorization()
+    {
     }
 }
