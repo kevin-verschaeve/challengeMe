@@ -68,29 +68,26 @@ csa_guzzle:
     profiler: %kernel.debug%
     logger: true
     clients:
-        apiary: # test purpose only, remove when done
-            config:
-                base_uri: http://polls.apiblueprint.org/
         runtastic:
             lazy: true
             config:
-                base_uri: https://www.runtastic.com/
+                base_uri: https://www.runtastic.com
         runkeeper:
             lazy: true
             config:
-                base_uri: https://api.runkeeper.com/
+                base_uri: https://api.runkeeper.com
         endomondo:
             lazy: true
             config:
-                base_uri: https://api.mobile.endomondo.com/mobile/
+                base_uri: https://api.mobile.endomondo.com/mobile
         nike_plus:
             lazy: true
             config:
-                base_uri: https://api.nike.com/v1/me/
+                base_uri: https://api.nike.com/v1/me
         strava:
             lazy: true
             config:
-                base_uri: https://www.strava.com/api/v3/
+                base_uri: https://www.strava.com/api/v3
 
 jms_serializer:
     metadata:
