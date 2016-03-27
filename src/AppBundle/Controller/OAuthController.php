@@ -3,6 +3,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\ApplicationConnector\ApplicationConnectorInterface;
+use AppBundle\Document\Application;
+use AppBundle\Document\UserApplication;
+use Doctrine\ODM\MongoDB\DocumentManager;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,17 +28,33 @@ class OAuthController extends Controller
     }
 
     /**
-     * @Route("/connect/{application}", name="application_connect")
+     * @Route("/connect/{applicationName}", name="application_connect")
      */
-    public function connectAction(Request $request, $application)
+    public function connectAction(Request $request, $applicationName)
     {
-        $applicationConnector = $this->getApplicationConnector($application);
+        $applicationConnector = $this->getApplicationConnector($applicationName);
 
-        $applicationConnector->login($request->query->getAlnum('code'));
+        $accessToken = $applicationConnector->login($request->query->getAlnum('code'));
 
-        return $this->render('AppBundle:Oauth:connect.html.twig', [
-            'user' => $applicationConnector->getMe(),
-        ]);
+        $user = $applicationConnector->getMe();
+
+        /** @var DocumentManager $dm */
+        $dm = $this->container->get('doctrine.odm.mongodb.document_manager');
+        $application = $dm->getRepository(Application::class)->findByName($applicationName);
+        /** @var UserApplication $userApplication */
+        $userApplication = $dm->getRepository(UserApplication::class)->findBy(
+            [
+                'user_id' => $user->getId(),
+                'application_id' => $application->getId(),
+            ]
+        );
+
+        $userApplication->setApplication($application);
+        $userApplication->setAccessToken($accessToken);
+        $dm->persist($userApplication);
+        $dm->flush();
+
+        return $this->redirectToRoute('get_me', ['applicationName' => $applicationName]);
     }
 
     /**

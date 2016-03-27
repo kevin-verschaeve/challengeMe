@@ -53,6 +53,8 @@ class Strava implements ApplicationConnectorInterface
 
         $this->accessToken = $response->access_token;
         $this->user = $response->athlete;
+
+        return $this->accessToken;
     }
 
     public function getMe()
