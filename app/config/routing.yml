@@ -2,3 +2,6 @@ challengeme_api:
     type: rest
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /api
+
+api_login_check:
+    path: /jwt/login_check

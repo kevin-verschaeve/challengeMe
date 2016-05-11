@@ -22,5 +22,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
+RUN a2enmod rewrite
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 

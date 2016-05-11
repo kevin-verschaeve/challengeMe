@@ -2,7 +2,7 @@ AppBundle\Document\User:
     user-johnny:
         username: 'Johnny'
         usernameCanonical: 'Johnny'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'johnny@challenge-me.com'
         totalPoints: 1000
@@ -18,7 +18,7 @@ AppBundle\Document\User:
     user-kevin:
         username: 'Kevin'
         usernameCanonical: 'Kevin'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'kevin@challenge-me.com'
         totalPoints: 1000
@@ -34,7 +34,7 @@ AppBundle\Document\User:
     user-guillaume:
         username: 'Guillaume'
         usernameCanonical: 'Guillaume'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'guillaume@challenge-me.com'
         totalPoints: 1000
@@ -50,7 +50,7 @@ AppBundle\Document\User:
     user-nicolas:
         username: 'Nicolas'
         usernameCanonical: 'Nicolas'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'nicolas@challenge-me.com'
         totalPoints: 1000
@@ -66,7 +66,7 @@ AppBundle\Document\User:
     user-tommy:
         username: 'Tommy'
         usernameCanonical: 'Tommy'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'tommy@challenge-me.com'
         totalPoints: 1000
@@ -82,7 +82,7 @@ AppBundle\Document\User:
     user-adrien:
         username: 'Adrien'
         usernameCanonical: 'Adrien'
-        plainPassword: 'toto'
+        password: <password()>
         roles: ['ROLE_ADMIN']
         email: 'adrien@challenge-me.com'
         totalPoints: 1000
