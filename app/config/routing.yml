@@ -1,3 +1,7 @@
+challengeme_oauth:
+    type: annotation
+    resource: "@AppBundle/Controller/OAuthController.php"
+
 challengeme_api:
     type: rest
     resource: "@AppBundle/Resources/config/routing.yml"

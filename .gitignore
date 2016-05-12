@@ -41,3 +41,6 @@
 
 # Docker
 docker-compose.yml
+
+# JWT
+*.pem
