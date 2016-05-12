@@ -11,3 +11,6 @@ AppBundle\Document\Application:
     application-endomondo:
         name: 'Endomondo'
         description: 'Description de Endomondo'
+    application-strava:
+        name: 'Strava'
+        description: 'Description de Strava'

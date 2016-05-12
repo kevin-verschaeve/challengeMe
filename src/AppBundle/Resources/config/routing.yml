@@ -1,3 +1,7 @@
 user_routes:
     type: rest
     resource: 'AppBundle\Controller\UserController'
+
+application_routes:
+    type: rest
+    resource: 'AppBundle\Controller\ApplicationController'

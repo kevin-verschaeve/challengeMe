@@ -3,6 +3,7 @@
 namespace AppBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @MongoDB\Document
@@ -38,6 +39,13 @@ class UserApplication
     private $applicationUsername;
 
     /**
+     * @var string The id of the user in the application
+     *
+     * @MongoDB\String
+     */
+    private $applicationUserId;
+
+    /**
      * @var string
      *
      * @MongoDB\String
@@ -50,6 +58,13 @@ class UserApplication
      * @MongoDB\Boolean
      */
     private $enabled;
+
+    /**
+     * @var string
+     *
+     * @MongoDB\String
+     */
+    private $accessToken;
 
     /**
      * @return string
@@ -137,5 +152,37 @@ class UserApplication
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * @param string $accessToken
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApplicationUserId()
+    {
+        return $this->applicationUserId;
+    }
+
+    /**
+     * @param string $applicationUserId
+     */
+    public function setApplicationUserId($applicationUserId)
+    {
+        $this->applicationUserId = $applicationUserId;
     }
 }
