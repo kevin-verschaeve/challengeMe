@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
 
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
+            new Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),

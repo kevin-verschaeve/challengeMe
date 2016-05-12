@@ -52,6 +52,13 @@ class UserApplication
     private $enabled;
 
     /**
+     * @var string
+     *
+     * @MongoDB\String
+     */
+    private $accessToken;
+
+    /**
      * @return string
      */
     public function getId()
@@ -137,5 +144,21 @@ class UserApplication
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+
+    /**
+     * @param string $accessToken
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
     }
 }

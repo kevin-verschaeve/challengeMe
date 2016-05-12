@@ -30,6 +30,7 @@
         "ismaambrosi/generator-bundle": "dev-master",
         "symfony/assetic-bundle": "~2.3",
         "sensio/generator-bundle": "~3.0",
+        "csa/guzzle-bundle": "^2.0",
         "lexik/jwt-authentication-bundle": "^1.5"
     },
     "require-dev": {
