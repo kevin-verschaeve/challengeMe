@@ -9,8 +9,6 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Most of the fields comes from "BaseUser", we override them to map them to mongoDB
- *
  * @MongoDB\Document
  */
 class User extends BaseUser
@@ -30,7 +28,7 @@ class User extends BaseUser
     /**
      * @MongoDB\String
      */
-    protected $usernameCanonical;
+    protected $password;
 
     /**
      * @MongoDB\String
@@ -41,16 +39,6 @@ class User extends BaseUser
      * @MongoDB\Bool
      */
     protected $enabled;
-
-    /**
-     * @MongoDB\String
-     */
-    protected $salt;
-
-    /**
-     * @MongoDB\String
-     */
-    protected $password;
 
     /**
      * @MongoDB\Hash
@@ -140,6 +128,22 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     /**
@@ -410,48 +414,40 @@ class User extends BaseUser
     }
 
     /**
-     * TODO: Check if necessary
-     *
-     * The serialized data have to contain the fields used by the equals method and the username.
-     *
-     * @return string
+     * {@inheritdoc}
      */
-    public function serialize()
+    public function getRoles()
     {
-        return serialize([
-            $this->password,
-            $this->salt,
-            $this->usernameCanonical,
-            $this->username,
-            $this->expired,
-            $this->locked,
-            $this->credentialsExpired,
-            $this->enabled,
-            $this->id,
-            $this->facebookId
-        ]);
+        return ['ROLE_USER'];
     }
 
     /**
-     * TODO: Check if necessary
-     *
-     * @param string $serialized
+     * {@inheritdoc}
      */
-    public function unserialize($serialized)
+    public function getPassword()
     {
-        $data = unserialize($serialized);
-        $data = array_merge($data, array_fill(0, 2, null));
+        return $this->password;
+    }
 
-        list(
-            $this->password,
-            $this->salt,
-            $this->usernameCanonical,
-            $this->username,
-            $this->expired,
-            $this->locked,
-            $this->credentialsExpired,
-            $this->enabled,
-            $this->id
-            ) = $data;
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSalt()
+    {
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function eraseCredentials()
+    {
     }
 }
