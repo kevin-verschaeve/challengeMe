@@ -12,12 +12,12 @@ class ApplicationController extends Controller
 {
     /**
      * @param Request $request
-     * @param $application
+     * @param $applicationName
      * @return Response
      *
-     * @Route("/me/{application}", name="get_me")
+     * @Route("/me/{applicationName}", name="me")
      */
-    public function getAction(Request $request, $application)
+    public function getAction(Request $request, $applicationName)
     {
         $dm = $this->getDocumentManager();
 

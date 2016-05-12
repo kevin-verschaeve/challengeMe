@@ -5,11 +5,9 @@ namespace AppBundle\ApplicationConnector;
 use GuzzleHttp\Client;
 use Symfony\Component\Routing\Router;
 
-class Runkeeper implements ApplicationConnectorInterface
+class Runkeeper extends AbstractApplicationConnector
 {
-    public function __construct(Client $client, Router $router, $clientId, $clientSecret)
-    {
-    }
+    const API_PATH_PREFIX = '';
 
     public function authorize()
     {

@@ -40,9 +40,9 @@ class OAuthController extends Controller
 
         /** @var DocumentManager $dm */
         $dm = $this->container->get('doctrine.odm.mongodb.document_manager');
-        $application = $dm->getRepository(Application::class)->findByName($applicationName);
+        $application = $dm->getRepository(Application::class)->findOneByName(ucfirst($applicationName));
         /** @var UserApplication $userApplication */
-        $userApplication = $dm->getRepository(UserApplication::class)->findBy(
+        $userApplication = $dm->getRepository(UserApplication::class)->findOneBy(
             [
                 'user_id' => $user->getId(),
                 'application_id' => $application->getId(),
@@ -54,27 +54,27 @@ class OAuthController extends Controller
         $dm->persist($userApplication);
         $dm->flush();
 
-        return $this->redirectToRoute('get_me', ['applicationName' => $applicationName]);
+        return $this->redirectToRoute('me', ['applicationName' => $applicationName]);
     }
 
     /**
-     * @Route("/revoke/{application}", name="application_revoke")
+     * @Route("/revoke/{applicationName}", name="application_revoke")
      */
-    public function revokeAction($application)
+    public function revokeAction($applicationName)
     {
-        $this->getApplicationConnector($application)->revokeAuthorization();
+        $this->getApplicationConnector($applicationName)->revokeAuthorization();
     }
 
     /**
-     * @param $application
+     * @param $applicationName
      * @return ApplicationConnectorInterface
      */
-    protected function getApplicationConnector($application)
+    protected function getApplicationConnector($applicationName)
     {
         return $this
             ->container
             ->get('app.application.manager')
-            ->getApplicationConnector($application)
+            ->getApplicationConnector($applicationName)
         ;
     }
 }

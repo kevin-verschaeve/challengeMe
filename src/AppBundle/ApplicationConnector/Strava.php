@@ -8,25 +8,12 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Router;
 
-class Strava implements ApplicationConnectorInterface
+class Strava extends AbstractApplicationConnector
 {
     const API_PATH_PREFIX = '/api/v3';
 
-    private $client;
-    private $router;
-    private $clientId;
-    private $clientSecret;
-
     private $accessToken;
     private $user;
-
-    public function __construct(Client $client, Router $router, $clientId, $clientSecret)
-    {
-        $this->client = $client;
-        $this->router = $router;
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
-    }
 
     public function authorize()
     {
@@ -35,7 +22,11 @@ class Strava implements ApplicationConnectorInterface
             $this->client->getConfig('base_uri'),
             'oauth/authorize',
             $this->clientId,
-            $this->router->generate('application_connect', ['application' => 'strava'], UrlGeneratorInterface::ABSOLUTE_URL)
+            $this->router->generate(
+                'application_connect',
+                ['application' => 'strava'],
+                UrlGeneratorInterface::ABSOLUTE_URL
+            )
         ));
     }
 

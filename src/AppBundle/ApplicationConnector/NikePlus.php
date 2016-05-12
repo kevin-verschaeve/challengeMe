@@ -5,11 +5,9 @@ namespace AppBundle\ApplicationConnector;
 use GuzzleHttp\Client;
 use Symfony\Component\Routing\Router;
 
-class NikePlus implements ApplicationConnectorInterface
+class NikePlus extends AbstractApplicationConnector
 {
-    public function __construct(Client $client, Router $router, $clientId, $clientSecret)
-    {
-    }
+    const API_PATH_PREFIX = '/v1/me';
 
     public function authorize()
     {
